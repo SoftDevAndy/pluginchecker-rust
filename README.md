@@ -10,7 +10,7 @@ We encountered an issue where there was a bunch of plugins on the server that wo
 * Using this url the oxide webpage gets scraped for the version number
 * Finally everything is displayed 
 
-**The meta file must follow the following format**
+**The meta file must follow the following format and be of file type .json**
 
 ```
 {
