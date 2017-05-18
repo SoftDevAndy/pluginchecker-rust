@@ -69,4 +69,4 @@ We encountered an issue where there was a bunch of plugins on the server that wo
 
 * [HtmlAgilityPack](https://www.nuget.org/packages/HtmlAgilityPack/)
 * [NewtonSoft Json Parser](https://www.nuget.org/packages/newtonsoft.json/)
-* [Icon Attribution] (http://www.doublejdesign.co.uk/)
+* [Icon Attribution](http://www.doublejdesign.co.uk/)
