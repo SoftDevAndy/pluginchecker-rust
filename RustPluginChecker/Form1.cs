@@ -37,11 +37,13 @@ namespace RustPluginChecker
             details = new List<Details>();
             errorList = new List<RustPlugin>();
 
-            if(isPluginRefLoaded() && isRconPluginsTextbox())
+            progressbar.Value = 0;
+
+            if (isPluginRefLoaded() && isRconPluginsTextbox())
             {
                 MessageBox.Show("Please wait while we check the plugin references.", "Important");
 
-                foreach (string line in tbMultiLine.Lines)
+                foreach (string line in rtbMultiLine.Lines)
                 {
                     string name = "";
                     string version = "";
@@ -81,10 +83,9 @@ namespace RustPluginChecker
 
                     pluginsList.Add(new RustPlugin(name, version));
                 }
-
+                
                 foreach (RustPlugin rp in pluginsList)
                 {
-                    int count = 0;
                     int index = doesPluginHaveRef(rp.name);
 
                     progressbar.Maximum = pluginsList.Count;
@@ -103,10 +104,9 @@ namespace RustPluginChecker
 
                             if (ourNode.InnerHtml.Substring(0, 7).Contains("Version"))
                             {
-
                                 string version = ourNode.InnerHtml.Replace("Version ", "");
 
-                                if (rp.version != version)
+                                if (isNotLatest(rp.version,version))
                                     details.Add(new Details(rp.name, rp.version, version, pluginsRefList.allPluginsRef[index].link));
                             }
                             else
@@ -117,7 +117,6 @@ namespace RustPluginChecker
                         errorList.Add(rp);
 
                     progressbar.PerformStep();
-                    count++;
                 }
 
                 dgError.DataSource = errorList;
@@ -126,6 +125,21 @@ namespace RustPluginChecker
                 dgPluginCompare.DataSource = details;
                 dgPluginCompare.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
+        }
+
+        bool isNotLatest(string currentversion, string webversion)
+        {
+            string pattern = "[.]";
+            string replacement = "";
+            Regex rgx = new Regex(pattern);
+
+            int cVersion = Convert.ToInt32(rgx.Replace(currentversion, replacement));
+            int wVersion = Convert.ToInt32(rgx.Replace(webversion, replacement));
+
+            if (cVersion == wVersion || cVersion > wVersion)
+                return false;
+
+            return true;
         }
 
         int doesPluginHaveRef(string pluginName)
@@ -175,7 +189,7 @@ namespace RustPluginChecker
 
         bool isRconPluginsTextbox()
         {
-            if (tbMultiLine.Text != "")
+            if (rtbMultiLine.Text != "")
                 return true;
             else
             {
@@ -192,7 +206,6 @@ namespace RustPluginChecker
 
             return JsonConvert.DeserializeObject<RustPluginRefList>(json);
         }
-
     }//class
 
 }//namespace
