@@ -1,7 +1,7 @@
 # pluginchecker-rust
 A rough windows form application used when figuring out which rust plugins need to be updated. It's rough and does the job, feel free to improve, edit etc
 
-![Plugin Image](https://puu.sh/vPOJZ/e1885c496c.png)
+![Plugin Image](https://puu.sh/vU9Pc/e72519c667.png)
 
 We encountered an issue where there was a bunch of plugins on the server that would get updated and it was tedious to track. The large number of plugins and the constant updates and changes to the game caused a lot of overhead when fixing/updating plugins on the server. The solution was...
 
