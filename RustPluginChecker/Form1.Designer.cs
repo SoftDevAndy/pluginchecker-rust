@@ -35,6 +35,7 @@
             this.gbResources = new System.Windows.Forms.GroupBox();
             this.dataGridShowPlugins = new System.Windows.Forms.DataGridView();
             this.gpRconData = new System.Windows.Forms.GroupBox();
+            this.rtbMultiLine = new System.Windows.Forms.RichTextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.gbPluginCompare = new System.Windows.Forms.GroupBox();
             this.dgError = new System.Windows.Forms.DataGridView();
@@ -43,7 +44,6 @@
             this.progressbar = new System.Windows.Forms.ProgressBar();
             this.dgPluginCompare = new System.Windows.Forms.DataGridView();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rtbMultiLine = new System.Windows.Forms.RichTextBox();
             this.gbResources.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridShowPlugins)).BeginInit();
             this.gpRconData.SuspendLayout();
@@ -112,6 +112,14 @@
             this.gpRconData.TabStop = false;
             this.gpRconData.Text = "Raw Rcon Data";
             // 
+            // rtbMultiLine
+            // 
+            this.rtbMultiLine.Location = new System.Drawing.Point(6, 22);
+            this.rtbMultiLine.Name = "rtbMultiLine";
+            this.rtbMultiLine.Size = new System.Drawing.Size(362, 266);
+            this.rtbMultiLine.TabIndex = 12;
+            this.rtbMultiLine.Text = "";
+            // 
             // btnCheck
             // 
             this.btnCheck.Location = new System.Drawing.Point(6, 294);
@@ -129,7 +137,6 @@
             this.gbPluginCompare.Controls.Add(this.lbUpdate);
             this.gbPluginCompare.Controls.Add(this.progressbar);
             this.gbPluginCompare.Controls.Add(this.dgPluginCompare);
-            this.gbPluginCompare.Enabled = false;
             this.gbPluginCompare.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPluginCompare.Location = new System.Drawing.Point(12, 353);
             this.gbPluginCompare.Name = "gbPluginCompare";
@@ -154,7 +161,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 222);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 16);
+            this.label1.Size = new System.Drawing.Size(134, 15);
             this.label1.TabIndex = 10;
             this.label1.Text = "Plugins with info issues";
             // 
@@ -163,7 +170,7 @@
             this.lbUpdate.AutoSize = true;
             this.lbUpdate.Location = new System.Drawing.Point(7, 55);
             this.lbUpdate.Name = "lbUpdate";
-            this.lbUpdate.Size = new System.Drawing.Size(107, 16);
+            this.lbUpdate.Size = new System.Drawing.Size(96, 15);
             this.lbUpdate.TabIndex = 9;
             this.lbUpdate.Text = "Needs Updating";
             // 
@@ -188,14 +195,6 @@
             // form1BindingSource
             // 
             this.form1BindingSource.DataSource = typeof(RustPluginChecker.Form1);
-            // 
-            // rtbMultiLine
-            // 
-            this.rtbMultiLine.Location = new System.Drawing.Point(6, 22);
-            this.rtbMultiLine.Name = "rtbMultiLine";
-            this.rtbMultiLine.Size = new System.Drawing.Size(362, 266);
-            this.rtbMultiLine.TabIndex = 12;
-            this.rtbMultiLine.Text = "";
             // 
             // Form1
             // 
