@@ -1,4 +1,4 @@
-# pluginchecker-rust
+# rustpluginchecker
 A rough windows form application used when figuring out which rust plugins need to be updated. It's rough and does the job, feel free to improve, edit etc
 
 ![Plugin Image](https://puu.sh/vU9Pc/e72519c667.png)
